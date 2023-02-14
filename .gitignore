@@ -20,5 +20,5 @@ out/
 .project
 bin/
 
-.mhtml
+*.mhtml
 
