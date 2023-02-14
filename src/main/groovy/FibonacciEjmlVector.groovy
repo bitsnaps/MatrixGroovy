@@ -15,7 +15,7 @@
  */
 
 import org.ejml.simple.SimpleMatrix
-import benchmark.MatrixMultiplication
+//import benchmark.MatrixMultiplication
 
 def m = new SimpleMatrix([[1, 1], [1, 0]] as double[][])
 double[] expected = [3, 2, 2, 1]
@@ -25,8 +25,8 @@ long t0 = System.nanoTime()
 1000.times {
     step1 = new SimpleMatrix(2, 2)
     result = new SimpleMatrix(2, 2)
-    MatrixMultiplication.mult_ikj_simple(m.matrix, m.matrix, step1.matrix)
-    MatrixMultiplication.mult_ikj_simple(step1.matrix, m.matrix, result.matrix)
+    //MatrixMultiplication.mult_ikj_simple(m.matrix, m.matrix, step1.matrix)
+    //MatrixMultiplication.mult_ikj_simple(step1.matrix, m.matrix, result.matrix)
     assert result.matrix.data == expected
 }
 
@@ -34,8 +34,8 @@ long t1 = System.nanoTime()
 1000.times {
     step1 = new SimpleMatrix(2, 2)
     result = new SimpleMatrix(2, 2)
-    MatrixMultiplication.mult_ikj(m.matrix, m.matrix, step1.matrix)
-    MatrixMultiplication.mult_ikj(step1.matrix, m.matrix, result.matrix)
+    //MatrixMultiplication.mult_ikj(m.matrix, m.matrix, step1.matrix)
+    //MatrixMultiplication.mult_ikj(step1.matrix, m.matrix, result.matrix)
     assert result.matrix.data == expected
 }
 
@@ -43,8 +43,8 @@ long t2 = System.nanoTime()
 1000.times {
     step1 = new SimpleMatrix(2, 2)
     result = new SimpleMatrix(2, 2)
-    MatrixMultiplication.mult_ikj_vector(m.matrix, m.matrix, step1.matrix)
-    MatrixMultiplication.mult_ikj_vector(step1.matrix, m.matrix, result.matrix)
+    //MatrixMultiplication.mult_ikj_vector(m.matrix, m.matrix, step1.matrix)
+    //MatrixMultiplication.mult_ikj_vector(step1.matrix, m.matrix, result.matrix)
     assert result.matrix.data == expected
 }
 

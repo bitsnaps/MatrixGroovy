@@ -18,16 +18,18 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.42.0'
     // uncomment next plugin if using JDK11+ and checking buildHealth
     //id 'com.autonomousapps.dependency-analysis' version '1.12.0'
+    id 'application'
 }
 apply plugin: 'groovy'
 apply plugin: 'application'
 
 repositories {
     mavenCentral()
+    /*/ for VectorPerformance
     maven {
         url 'https://jitpack.io'
         content { includeGroup 'com.github.lessthanoptimal' }
-    }
+    }*/
 }
 
 dependencies {
@@ -38,6 +40,10 @@ dependencies {
     implementation 'org.nd4j:nd4j-native-platform:1.0.0-M2.1'
     implementation 'org.apache.commons:commons-math3:3.6.1'
     implementation 'org.ojalgo:ojalgo:51.4.0'
-    implementation 'com.github.lessthanoptimal:VectorPerformance:master-SNAPSHOT'
+    //implementation 'com.github.lessthanoptimal:VectorPerformance:master-SNAPSHOT'
     runtimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+}
+
+application {
+    mainClass = 'Main'
 }
